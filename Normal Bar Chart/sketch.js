@@ -2,28 +2,31 @@ let barCharts = [];
 let data1;
 let data2;
 let data3;
+let data4;
+let data5;
 
 let cleanData = [];
 let cleanData2 = [];
 let cleanData3 = [];
-
+let cleanData4 = [];
+let cleanData5 = [];
 
 let numRows;
 let numRows2;
 let numRows3;
-
+let numRows4;
+let numRows5;
 
 function preload() {
   data1 = loadTable("data/property_price1.csv", "csv", "header");
   data2 = loadTable("data/test5.csv", "csv", "header");
   data3 = loadTable("data/property_price.csv", "csv", "header");
-
-
+  data4 = loadTable("data/test2.csv", "csv", "header");
 }
 
 function setup() {
   background(50);
-  createCanvas(1900, 1900);
+  createCanvas(2500, 2500);
   angleMode(DEGREES);
   noLoop();
 
@@ -114,13 +117,45 @@ let barChart03 = {
   labelPadding: 10,
   labelColour: "#db1f83",
   labelRotation: 45,
-};
-barCharts.push(new StackedBarChart(barChart03));
 }
+
+barCharts.push(new StackedBarChart(barChart03));
+
+
+
+numRows4 = data4.rows.length;
+for (let i = 0; i < numRows4; i++) {
+  cleanData4.push(data4.rows[i].obj);
+}
+
+let barChart4 = {
+  data: cleanData4,
+  title: "Price of Different Types of Property 2019",
+  xAxisTitle: "Type and Area of Residential Property",
+  yAxisTitle: "Price",
+  
+  yValue: "Age Group",
+  topXValue: "FEMALEVALUE",
+  bottomXValue: "MALEVALUE",
+  chartWidth: 700,
+  chartHeight: 300,
+
+  xPos: 1050,
+  yPos: 1150,
+
+  axisLineColour: "#d9d9d9",
+  barWidth: 20,
+  labelTextSize: 20,
+  labelPadding: 10,
+  labelColour: "#db1f83",
+  labelRotation: 0,
+};
+barCharts.push(new AgeChart(barChart4));
+}
+
+
 
 function draw() {
   background(11, 19, 43);
-  barCharts.forEach((bar) => bar.render());
-
-
+  barCharts.forEach(bar => bar.render());
 }
