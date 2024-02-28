@@ -39,7 +39,7 @@ function preload() {
 
 function setup() {
   background(50);
-  createCanvas(2500, 2500);
+  createCanvas(3500, 2500);
   angleMode(DEGREES);
   noLoop();
 
@@ -56,15 +56,15 @@ function setup() {
     yAxisTitle: "Price",
     xValue: "Type of Residential Property",
     yValue: "VALUE",
-    chartWidth: 700,
-    chartHeight: 300,
+    chartWidth: 1200,
+    chartHeight: 600,
 
     xPos: 150,
-    yPos: 450,
+    yPos:850,
 
     axisLineColour: "#d9d9d9",
-    barWidth: 20,
-    labelTextSize: 20,
+    barWidth: 35,
+    labelTextSize: 40,
     labelPadding: 10,
     labelColour: "#db1f83",
     labelRotation: 45,
@@ -84,12 +84,12 @@ let barChart02 = {
   yAxisTitle: "County",
   xValue: "VALUE",
   yValue: "Local Authority",
-  chartWidth: 700,
-  chartHeight: 180,
-  xPos: 1150,
-  yPos: 450,
+  chartWidth: 1200,
+  chartHeight: 360,
+  xPos: 1550,
+  yPos: 850,
   axisLineColour: "#d9d9d9",
-  barWidth: 20,
+  barWidth: 37,
   labelTextSize: 130,
   labelPadding: 10,
   labelColour: "#db1f83",
@@ -107,9 +107,9 @@ for (let i = 0; i < numRows; i++) {
 
 let barChart03 = {
   data: cleanData3,
-  title: "Price of Different Types of Property 2019",
+  title: "Residence by area",
   xAxisTitle: "Type and Area of Residential Property",
-  yAxisTitle: "Price",
+  yAxisTitle: "Likelyhood by gender",
   
   xValue: "Type of Residential Property",
   bottomYValue: "VALUE2018",
@@ -122,7 +122,7 @@ let barChart03 = {
   chartHeight: 300,
 
   xPos: 150,
-  yPos: 1150,
+  yPos: 1650,
 
   axisLineColour: "#d9d9d9",
   barWidth: 20,
@@ -143,18 +143,18 @@ for (let i = 0; i < numRows4; i++) {
 
 let barChart4 = {
   data: cleanData4,
-  title: "Price of Different Types of Property 2019",
-  xAxisTitle: "Type and Area of Residential Property",
-  yAxisTitle: "Price",
+  title: "Home owners by age and gender",
+  xAxisTitle: "Likhood to own a home",
+  yAxisTitle: "Age",
   
-  yValue: "Age Group",
+  yValue: "AgeGroup",
   topXValue: "FEMALEVALUE",
   bottomXValue: "MALEVALUE",
   chartWidth: 700,
-  chartHeight: 300,
+  chartHeight: 220,
 
   xPos: 1150,
-  yPos: 1150,
+  yPos: 1650,
 
   axisLineColour: "#d9d9d9",
   barWidth: 20,
@@ -181,7 +181,7 @@ let barChart05 = {
   chartWidth: 700,
   chartHeight: 180,
   xPos: 1150,
-  yPos: 1800,
+  yPos: 2200,
   axisLineColour: "#d9d9d9",
   barWidth: 20,
   labelTextSize: 130,
@@ -205,7 +205,7 @@ let barChart06 = {
   chartWidth: 700,
   chartHeight: 180,
   xPos: 1085,
-  yPos: 1800,
+  yPos: 2200,
   axisLineColour: "#d9d9d9",
   barWidth: 20,
   labelTextSize: 130,
@@ -216,6 +216,6 @@ let barChart06 = {
 barCharts.push(new AgeChartLeft(barChart06));
 }
 function draw() {
-  background(11, 19, 43);
+  background(11, 19, 95);
   barCharts.forEach(bar => bar.render());
 }
